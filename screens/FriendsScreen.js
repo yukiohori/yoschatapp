@@ -10,7 +10,7 @@ import {
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
-import { Badge, Container, Header, Content, List, ListItem, Text, Separator, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import { Badge, Container, Header, Content, List, ListItem, Text, Separator, Left, Body, Right, Button, Icon, Title, Thumbnail } from 'native-base';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -25,7 +25,7 @@ export default class HomeScreen extends React.Component {
             <View style={{flexDirection: 'row',alignItems: 'center',}}>
               <Text>Friends </Text>
               <Badge info>
-                <Text>4</Text>
+                <Text>3</Text>
               </Badge>
             </View>
           </Left>
@@ -46,22 +46,26 @@ export default class HomeScreen extends React.Component {
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <List>
             <Separator bordered>
-              <Text>FORWARD</Text>
+              <Text>Friends recommend</Text>
             </Separator>
             <ListItem style={{borderColor: 'transparent'}}>
-              <Text>Aaron Bennet</Text>
-            </ListItem>
-            <ListItem style={{borderColor: 'transparent'}}>
-              <Text>Claire Barclay</Text>
-            </ListItem>
-            <ListItem style={{borderColor: 'transparent'}}>
-              <Text>Kelso Brittany</Text>
+              <Thumbnail small source={{ uri: 'https://www.buira.org/assets/images/shared/default-profile.png' }} />
+              <Text style={{marginLeft:15}}>Kelso Brittany</Text>
             </ListItem>
             <Separator bordered>
-              <Text>MIDFIELD</Text>
+              <Text>Friends</Text>
             </Separator>
             <ListItem style={{borderColor: 'transparent'}}>
-              <Text>Caroline Aaron</Text>
+              <Thumbnail small source={{ uri: 'https://www.buira.org/assets/images/shared/default-profile.png' }} />
+              <Text style={{marginLeft:15}}>Caroline Aaron</Text>
+            </ListItem>
+            <ListItem style={{borderColor: 'transparent'}}>
+            <Thumbnail small source={{ uri: 'https://www.buira.org/assets/images/shared/default-profile.png' }} />
+              <Text style={{marginLeft:15}}>Aaron Bennet</Text>
+            </ListItem>
+            <ListItem style={{borderColor: 'transparent'}}>
+              <Thumbnail small source={{ uri: 'https://www.buira.org/assets/images/shared/default-profile.png' }} />
+              <Text style={{marginLeft:15}}>Claire Barclay</Text>
             </ListItem>
           </List>
         </ScrollView>
