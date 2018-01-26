@@ -4,35 +4,66 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+import { Badge, Container, Header, Content, List, ListItem, Text, Separator, Left, Body, Right, Button, Icon, Title } from 'native-base';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
-    // title: 'Friends',
   };
 
   render() {
     return (
       <View style={styles.container}>
-        {/* <View style={styles.topContainer}>
-          <Text>Friends</Text>
-          <Text>Add</Text>
-          <Text>Search</Text>
-        </View> */}
+        <Header>
+          <Left>
+            <View style={{flexDirection: 'row',alignItems: 'center',}}>
+              <Text>Friends </Text>
+              <Badge info>
+                <Text>4</Text>
+              </Badge>
+            </View>
+          </Left>
+          <Body>
+            <Title></Title>
+          </Body>
+          <Right>
+            <View style={{flexDirection: 'row',alignItems: 'center',}}>
+              <Button transparent>
+                <Icon name='add' />
+              </Button>
+              <Button transparent>
+                <Icon name='search' />
+              </Button>
+            </View>
+          </Right>
+        </Header>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-          <View style={styles.getStartedContainer}>
-      
-
-          </View>
-
+          <List>
+            <Separator bordered>
+              <Text>FORWARD</Text>
+            </Separator>
+            <ListItem style={{borderColor: 'transparent'}}>
+              <Text>Aaron Bennet</Text>
+            </ListItem>
+            <ListItem style={{borderColor: 'transparent'}}>
+              <Text>Claire Barclay</Text>
+            </ListItem>
+            <ListItem style={{borderColor: 'transparent'}}>
+              <Text>Kelso Brittany</Text>
+            </ListItem>
+            <Separator bordered>
+              <Text>MIDFIELD</Text>
+            </Separator>
+            <ListItem style={{borderColor: 'transparent'}}>
+              <Text>Caroline Aaron</Text>
+            </ListItem>
+          </List>
         </ScrollView>
       </View>
     );
@@ -48,14 +79,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: 20
+    // paddingTop: 20
   },
   topContainer: {
     width: '100%',
     height: 40,
     backgroundColor: '#2980b9',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'space-between',
     // justifyContent: 'center'
   },
   developmentModeText: {
@@ -66,19 +98,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
+    // marginTop: -20,
   },
   getStartedContainer: {
     alignItems: 'center',
@@ -94,12 +114,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.05)',
     borderRadius: 3,
     paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
   },
   tabBarInfoContainer: {
     position: 'absolute',
@@ -120,24 +134,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fbfbfb',
     paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
   },
 });
