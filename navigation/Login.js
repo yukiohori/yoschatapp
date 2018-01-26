@@ -13,7 +13,7 @@ export default class LoginScreen extends React.Component {
                 <Text style={styles.textstyle}>YOS CHAT</Text>
                 <TextInput placeholder="Username" maxLength={20} underlineColorAndroid={'transparent'} style={styles.textinput}></TextInput>
                 <TextInput placeholder="Password" maxLength={20} underlineColorAndroid={'transparent'} secureTextEntry={true} style={styles.textinput}></TextInput>
-                <TouchableOpacity style={styles.btnStyle}>
+                <TouchableOpacity style={styles.btnStyle} onPress={()=>{ this.props.navigation.navigate('Main'); }}>
                     <Text style={[styles.textCenter,styles.textBtn]} >LOGIN</Text>
                 </TouchableOpacity>
             </View>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingLeft: 40,
     paddingRight: 40,
-    backgroundColor: '#fff',
+    backgroundColor: '#3498db',
   },
   form: {
     paddingTop: 20,
@@ -38,19 +38,26 @@ const styles = StyleSheet.create({
   },
   textstyle: {
     textAlign: 'center',
-    marginBottom: 10
+    marginBottom: 10,
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: 'white'
   },
   textCenter: {
     textAlign: 'center'
   },
   textinput: {
     width: '100%',
-    borderWidth: 1,
+    borderWidth: 2,
+    borderColor: 'rgba(0,0,0,0.2)',
     padding: 10,
     borderRadius: 5,
-    marginBottom: 10
+    marginBottom: 10,
+    backgroundColor: 'white'
   },
   btnStyle: {
+    borderWidth: 2,
+    borderColor: '#2980b9',
     padding: 10,
     backgroundColor: '#2980b9',
     borderRadius: 5,

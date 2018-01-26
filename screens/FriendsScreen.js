@@ -14,13 +14,18 @@ import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    // header: null,
-    title: 'Friends',
+    header: null,
+    // title: 'Friends',
   };
 
   render() {
     return (
       <View style={styles.container}>
+        {/* <View style={styles.topContainer}>
+          <Text>Friends</Text>
+          <Text>Add</Text>
+          <Text>Search</Text>
+        </View> */}
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
           <View style={styles.getStartedContainer}>
@@ -43,6 +48,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: 20
+  },
+  topContainer: {
+    width: '100%',
+    height: 40,
+    backgroundColor: '#2980b9',
+    flexDirection: 'row',
+    alignItems: 'center'
+    // justifyContent: 'center'
   },
   developmentModeText: {
     marginBottom: 20,

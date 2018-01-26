@@ -3,7 +3,8 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Profile',
+    header: null,
+    // title: 'Profile',
   };
 
   render() {

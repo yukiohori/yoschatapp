@@ -3,7 +3,8 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
-    title: 'Chat',
+    header: null,
+    // title: 'Chat',
   };
 
   render() {
