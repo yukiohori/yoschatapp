@@ -14,7 +14,14 @@ export default class SettingsScreen extends React.Component {
         <View style={styles.profile}>
           <Thumbnail large source={{ uri: 'https://www.buira.org/assets/images/shared/default-profile.png' }} />
           <Text style={{marginTop: 10}}>Username</Text>
+          <Text style={{marginTop: 10}}>PROFILE INFO</Text>
+          <View style={{marginTop: 20}}>
+            {/* <Text>Name@gmail.com</Text> */}
+            
+            <Button><Text>Change Profile</Text></Button>
+          </View>
         </View>
+        
       </ScrollView>
     );
   }

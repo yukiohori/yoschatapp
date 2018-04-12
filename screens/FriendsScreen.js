@@ -11,11 +11,32 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 import { Badge, Container, Header, Content, List, ListItem, Text, Separator, Left, Body, Right, Button, Icon, Title, Thumbnail } from 'native-base';
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBKXwKtN3kDUaEvisaCbLRWI4ayZFqbLPY",
+  authDomain: "https://mobileapp-14752.firebaseio.com",
+  databaseURL: "https://mobileapp-14752.firebaseio.com/",
+  storageBucket: "mobileapp-14752.appspot.com"
+};
+
+firebase.initializeApp(firebaseConfig);
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
+
+  storeHighScore(userId, score) {
+    firebase.database().ref('users/' + userId).set({
+      highscore: score
+    });
+  }
+
+  componentDidMount(){
+    this.storeHighScore(12323,3123);
+  }
 
   render() {
     return (
